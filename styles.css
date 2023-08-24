@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+#mynetwork {
+    width: 800px;
+    height: 600px;
+    border: 1px solid lightgray;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+}
+
+
+.button-container {
+    display: flex;
+    margin-top: 30px;
+}
+
+button {
+    margin: 0 5px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
