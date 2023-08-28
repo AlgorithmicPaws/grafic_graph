@@ -32,11 +32,25 @@
             <td>Task Time</td>
             <td><input id="node-title"  placeholder="Enter Time" value="new value" /></td>
           </tr>
-
         </table>
         <input type="button" value="save" id="saveButton" />
         <input type="button" value="cancel" id="cancelButton" />
       </div>
+
+      <div id="edge-popUp" style="display: none;">
+        <table style="margin: auto">
+          <tr>
+            <td>Cost</td>
+            <td><input id="edge-label" placeholder="Enter Cost" value="new value" /></td>
+          </tr>
+        </table>
+        <p>Choose edge type:</p>
+        <button id="bidirectional">Bidirectional</button>
+        <button id="unidirectional">Unidirectional</button>
+        <br/>
+        <button id="edgeCancel">Cancel</button>
+      </div>
+      
 </body>
 </html>
  

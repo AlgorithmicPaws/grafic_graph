@@ -39,8 +39,26 @@ function draw() {
         document.getElementById("cancelButton").onclick = cancelEdit.bind(this, callback);
         document.getElementById("network-popUp").style.display = "block";
       },
-      addEdge: function (data, callback) {
-        callback(data)
+
+      addEdge: function (data, callback)  {
+        var edgePopUp = document.getElementById("edge-popUp");
+        edgePopUp.style.display = "block";
+        document.getElementById("bidirectional").addEventListener("click", function () {
+          data.arrows = null;
+          data.label = document.getElementById("edge-label").value; // Get the edge label value
+          callback(data);
+          edgePopUp.style.display = "none";
+        });
+        
+        document.getElementById("unidirectional").addEventListener("click", function () {
+          data.arrows = "to";
+          data.label = document.getElementById("edge-label").value; // Get the edge label value
+          callback(data);
+          edgePopUp.style.display = "none";
+        });
+        document.getElementById("edgeCancel").addEventListener("click", function () {
+          edgePopUp.style.display = "none";
+        });
       },
     },
     nodes: {
