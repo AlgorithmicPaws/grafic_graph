@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +8,35 @@
     src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<script src="script.js"></script>
+
+<body onload="init();">
     <h1>Graphic Graph</h1>
     <div id="mynetwork"></div>
-    <div class="button-container">
-        <button id="addNodeBtn">Add Node</button>
-        <button id="editNodeBtn">Edit Node</button>
-        <button id="deleteNodeBtn">Delete Node</button>
-        <button id="addEdgeBtn">Add Edge</button>
-    </div>
-    <script src="script.js"></script>
+    <div id="network-popUp">
+        <span id="operation">node</span> <br />
+        <table style="margin: auto">
+          <tr>
+            <td>Id</td>
+            <td><input id="node-id"  placeholder="Enter ID" value="new value" /></td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td><input id="node-label"  placeholder="Enter Name" value="new value" /></td>
+          </tr>
+          <tr>
+            <td>Prerequisite</td>
+            <td><input id="node-prerequisite"  placeholder="Enter Nodes" value="new value" /></td>
+          </tr>
+          <tr>
+            <td>Task Time</td>
+            <td><input id="node-title"  placeholder="Enter Time" value="new value" /></td>
+          </tr>
+
+        </table>
+        <input type="button" value="save" id="saveButton" />
+        <input type="button" value="cancel" id="cancelButton" />
+      </div>
 </body>
 </html>
+ 
