@@ -1,53 +1,145 @@
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+    font-family: sans serif, Arial;
+    margin: 0;  
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
     height: 100vh;
-    background-color: #f0f0f0;
+    background: linear-gradient(to bottom, #190c29, #35155D);
 }
 
 h1 {
-    margin-top: 20px;
+    margin: 20px;
+    font-size: 60px;
+
+    color: #5fa7fa; /* Your desired color here */}
+td{
+    font-weight: semibold;
+    padding: 7px;
+}   
+input{
+    font-family: sans serif, Arial;
+    border-radius: 10px;
+    background-color: rgba(25, 12, 41, .05);
+    color: #ffff;   
+    height: 25px;
+    border-width: 0.01px;
+}  
+
+#saveButton{
+    border-radius: 15px;
+    background-color: #974EC3;
+    margin-left: 10px;
+    margin-right: 10px; 
+    margin-top: 15px;  
+    width: 70px;
+    color: #ffff;
+    border-width: 0px;
+}   
+#saveButton:hover{
+    background-color:#f0f0f0;
+    color: #9233ce;
+}
+#bidirectional{
+    border-radius: 15px;
+    background-color: #974EC3;
+    margin-left: 10px;
+    margin-right: 10px; 
+
+    width: 120px;
+    color: #ffff;
+    border-width: 0px;
+}
+#bidirectional:hover{
+    background-color:#f0f0f0;
+    color: #9233ce;
+}
+#unidirectional{
+    border-radius: 15px;
+    background-color: #974EC3;
+    margin-left: 10px;
+    margin-right: 10px; 
+  
+    width: 120px;
+    color: #ffff;
+    border-width: 0px;
+}
+#unidirectional:hover{
+    background-color:#f0f0f0;
+    color: #9233ce;
 }
 
+#edgeCancel{
+    border-radius: 15px;
+    background-color: #974EC3;
+    margin-left: 10px;
+    margin-right: 10px; 
+    margin-top: 15px;  
+    width: 70px;
+    color: #ffff;
+    border-width: 0px;
+}
+#edgeCancel:hover{
+    background-color:#f0f0f0;
+    color: #9233ce;
+}
+#cancelButton{
+    border-radius: 15px;
+    background-color: #974EC3;
+    margin-left: 10px;
+    margin-right: 10px; 
+    margin-top: 15px;  
+    width: 70px;
+    color: #ffff;
+    border-width: 0px;
+}
+#cancelButton:hover{
+    background-color:#f0f0f0;
+    color: #9233ce;
+}
+#saveButton:hover{
+    background-color:#f0f0f0;
+    color: #9233ce;
+}
 #mynetwork {
-    width: 800px;
-    height: 600px;
-    border: 1px solid lightgray;
+    width: 1100px;
+    height: 800px;
+    margin: 20px;   
     display: flex;
     justify-content: center; /* Centra horizontalmente */
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .05);
+    backdrop-filter: blur(5px);
 }
 #network-popUp {
     display: none;
     position: absolute;
-    top: 350px;
-    left: 170px;
-    z-index: 299;
-    width: 300px;
-    height: 150px;
-    background-color: #f9f9f9;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #5394ed;
+    left: 1%  ; /* Position it on the left side */
+    top: 50%; /* Adjust the vertical position as needed */
+    transform: translateY(-50%); /* Center it vertically */
+    color: #5fa7fa; /* Your desired color here */
+    background-color: rgba(25, 12, 41);
+    border-radius: 8px;
     padding: 10px;
     text-align: center;
   }
+  #operation{
+    font-size: 20px;
+    font-weight: bold;
+    }
   #edge-popUp {
     display: none;
     position: absolute;
-    top: 350px;
-    left: 170px;
-    z-index: 299;
-    width: 300px;
-    height: 150px;
-    background-color: #f9f9f9;
-    border-style: solid;
-    border-width: 3px;
-    border-color: red;
+    right: 1%  ; /* Position it on the left side */
+    top: 50%; /* Adjust the vertical position as needed */
+    transform: translateY(-50%); /* Center it vertically */
+    color: #5fa7fa; /* Your desired color here */
+    background-color: rgba(25, 12, 41);
+    border-radius: 8px;
     padding: 10px;
     text-align: center;
   }

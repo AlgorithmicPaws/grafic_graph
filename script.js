@@ -62,14 +62,26 @@ function draw() {
       },
     },
     nodes: {
-        shape: "dot",
-        size: 20,
-        font: {
-          size: 15,
-          color: "#111",
-        },
-        borderWidth: 2,
+      shape: "dot",
+      size: 20,
+      color: "#FE7BE5",
+      font: {
+        size: 18,
+        color: "#ffffff",
       },
+      borderWidth: 2,
+    },
+    edges: {
+      color: "#d6116d",
+      width: 3,
+      font: { 
+        size: 18,
+        color: "#ffffff",
+        labelHighlightBold: false,
+        strokeWidth: "2px",
+      },
+      
+    },
   };
   network = new vis.Network(container, data, options);
 }
