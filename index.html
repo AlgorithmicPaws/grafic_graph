@@ -39,12 +39,13 @@
         </fieldset>
       </form>
       <div class="button-container">
-        <button type="button" class="button" id="saveButton">Save</button>
-        <button type="button" class="button" id="cancelButton">Cancel</button>
+        <button class="button" id="saveButton">Save</button>
+        <button class="button" id="cancelButton">Cancel</button>
       </div>
     </div>
 
-    <div id="edge-popUp" class="popup" style="display: none;">
+    <div id="edge-popUp" class="popup">
+      <span id="edge-operation">node</span> <br />
       <form>
           <fieldset>
               <legend>Edge Information</legend>
@@ -54,10 +55,10 @@
       </form>
       <div class="button-container">
         <p>Choose edge type:</p>
-        <button class="button" id="bidirectional">Bidirectional</button>
-        <button class="button" id="unidirectional">Unidirectional</button>
+        <button class="button" id="edge-saveButtonBi">Bidirectional</button>
+        <button class="button" id="edge-saveButtonUni">Unidirectional</button>
         <br/>
-        <button class="button" id="edgeCancel">Cancel</button>
+        <button class="button" id="edge-cancelButton">Cancel</button>
       </div>
     </div> 
 </body>

@@ -39,48 +39,16 @@ function draw() {
         document.getElementById("cancelButton").onclick = cancelEdit.bind(this, callback);
         document.getElementById("network-popUp").style.display = "block";
       },
-
       addEdge: function (data, callback)  {
-        var edgePopUp = document.getElementById("edge-popUp");
-        edgePopUp.style.display = "block";
-        document.getElementById("bidirectional").addEventListener("click", function () {
-          data.arrows = null;
-          data.label = document.getElementById("edge-label").value; // Get the edge label value
-          callback(data);
-          edgePopUp.style.display = "none";
-        });
-        
-        document.getElementById("unidirectional").addEventListener("click", function () {
-          data.arrows = "to";
-          data.label = document.getElementById("edge-label").value; // Get the edge label value
-          callback(data);
-          edgePopUp.style.display = "none";
-        });
-        document.getElementById("edgeCancel").addEventListener("click", function () {
-          edgePopUp.style.display = "none";
-        });
-
+        document.getElementById("edge-operation").innerText = "Add Edge";
+        editEdgeWithoutDrag(data, callback);
       },
-      editEdge: function (data, callback)  {
-        var edgePopUp = document.getElementById("edge-popUp");
-        edgePopUp.style.display = "block";
-        document.getElementById("bidirectional").addEventListener("click", function () {
-          data.arrows = null;
-          data.label = document.getElementById("edge-label").value; // Get the edge label value
-          callback(data);
-          edgePopUp.style.display = "none";
-        });
-        
-        document.getElementById("unidirectional").addEventListener("click", function () {
-          data.arrows = "to";
-          data.label = document.getElementById("edge-label").value; // Get the edge label value
-          callback(data);
-          edgePopUp.style.display = "none";
-        });
-        document.getElementById("edgeCancel").addEventListener("click", function () {
-          edgePopUp.style.display = "none";
-        });
-        
+      editEdge:{
+        editWithoutDrag: function (data, callback) {
+          document.getElementById("edge-operation").innerText =
+            "Edit Edge";
+          editEdgeWithoutDrag(data, callback);
+        },
       },
     },
     nodes: {
@@ -127,6 +95,42 @@ function saveData(data, callback) {
   document.getElementById("node-title").value = "";
   document.getElementById("node-prerequisite").value = "";
   clearPopUp();
+  callback(data);
+}
+
+function editEdgeWithoutDrag(data, callback) {
+
+  document.getElementById("edge-label").value = data.label;
+  document.getElementById("edge-saveButtonBi").onclick = saveEdgeDataBi.bind(this,data,callback);
+  document.getElementById("edge-saveButtonUni").onclick = saveEdgeDataUni.bind(this,data,callback);
+  document.getElementById("edge-cancelButton").onclick =cancelEdgeEdit.bind(this, callback);
+  document.getElementById("edge-popUp").style.display = "block";
+}
+function clearEdgePopUp() {
+  document.getElementById("edge-saveButtonBi").onclick = null;
+  document.getElementById("edge-saveButtonUni").onclick = null;
+  document.getElementById("edge-cancelButton").onclick = null;
+  document.getElementById("edge-popUp").style.display = "none";
+}
+function cancelEdgeEdit(callback) {
+  clearEdgePopUp();
+  callback(null);
+}
+
+function saveEdgeDataBi(data, callback) {
+  if (typeof data.to === "object") data.to = data.to.id;
+  if (typeof data.from === "object") data.from = data.from.id;
+  data.label = document.getElementById("edge-label").value;
+  data.arrows = null;
+  clearEdgePopUp();
+  callback(data);
+}
+function saveEdgeDataUni(data, callback) {
+  if (typeof data.to === "object") data.to = data.to.id;
+  if (typeof data.from === "object") data.from = data.from.id;
+  data.label = document.getElementById("edge-label").value;
+  data.arrows = "to";
+  clearEdgePopUp();
   callback(data);
 }
 
