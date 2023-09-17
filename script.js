@@ -22,7 +22,6 @@ function draw() {
   var options = {
     interaction: { keyboard: true },
     manipulation: {
-      color: "#FE7BE5",
       addNode: function (data, callback) {
         document.getElementById("operation").innerText = "Add Node";
         document.getElementById("node-id").value = data.id;
@@ -60,6 +59,28 @@ function draw() {
         document.getElementById("edgeCancel").addEventListener("click", function () {
           edgePopUp.style.display = "none";
         });
+
+      },
+      editEdge: function (data, callback)  {
+        var edgePopUp = document.getElementById("edge-popUp");
+        edgePopUp.style.display = "block";
+        document.getElementById("bidirectional").addEventListener("click", function () {
+          data.arrows = null;
+          data.label = document.getElementById("edge-label").value; // Get the edge label value
+          callback(data);
+          edgePopUp.style.display = "none";
+        });
+        
+        document.getElementById("unidirectional").addEventListener("click", function () {
+          data.arrows = "to";
+          data.label = document.getElementById("edge-label").value; // Get the edge label value
+          callback(data);
+          edgePopUp.style.display = "none";
+        });
+        document.getElementById("edgeCancel").addEventListener("click", function () {
+          edgePopUp.style.display = "none";
+        });
+        
       },
     },
     nodes: {

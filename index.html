@@ -15,6 +15,7 @@
   <header>
     <h1>Graphic Graph</h1>
   </header>
+  
     <main>
       <div id="mynetwork"></div>
     </main>
@@ -36,47 +37,29 @@
           <label for="node-title">Task Time:</label>
           <input type="text" id="node-title" placeholder="Enter Time" value="" />
         </fieldset>
+      </form>
       <div class="button-container">
-          <input type="button" class="button" value="Save" id="saveButton" />
-          <input type="button" class="button" value="Cancel" id="cancelButton" />
+        <button type="button" class="button" id="saveButton">Save</button>
+        <button type="button" class="button" id="cancelButton">Cancel</button>
       </div>
-  </form>
-</div>
+    </div>
 
-<!-- Edge Pop-up 
-<div id="edge-popUp" class="popup" style="display: none;">
-  <form>
-      <fieldset>
-          <legend>Edge Information</legend>
-          <label for="edge-label">Cost:</label>
-          <input type="text" id="edge-label" placeholder="Enter Cost" value="" />
-      </fieldset>
-
+    <div id="edge-popUp" class="popup" style="display: none;">
+      <form>
+          <fieldset>
+              <legend>Edge Information</legend>
+              <label for="edge-label">Cost:</label>
+              <input type="text" id="edge-label" placeholder="Enter Cost" value="" />
+          </fieldset>
+      </form>
       <div class="button-container">
-          <p>Choose edge type:</p>
-          <button class="button" id="bidirectional">Bidirectional</button>
-          <button class="button" id="unidirectional">Unidirectional</button>
-          <br/>
-          <button class="button" id="edgeCancel">Cancel</button>
-      </div>
-  </form>
-</div>
-
-
-      <div id="edge-popUp" style="display: none;">
-        <table style="margin: auto">
-          <tr>
-            <td>Cost</td>
-            <td><input id="edge-label" placeholder="Enter Cost" value="new value" /></td>
-          </tr>
-        </table>
         <p>Choose edge type:</p>
         <button class="button" id="bidirectional">Bidirectional</button>
         <button class="button" id="unidirectional">Unidirectional</button>
         <br/>
         <button class="button" id="edgeCancel">Cancel</button>
       </div>
-      
+    </div> 
 </body>
 </html>
  
