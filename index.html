@@ -6,36 +6,62 @@
     <title>Graphic Graph</title>
     <script type="text/javascript"
     src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <script src="script.js"></script>
 
 <body onload="init();">
-    <h1 className="text-3xl animate-spin font-bold underline">Graphic Graph</h1>
-    <div id="mynetwork"></div>
-    <div id="network-popUp">
-        <span id="operation">node</span> <br />
-        <table style="margin: auto">
-          <tr>
-            <td>Id</td>
-            <td><input id="node-id"  placeholder="Enter ID" value="new value" /></td>
-          </tr>
-          <tr>
-            <td>Name</td>
-            <td><input id="node-label"  placeholder="Enter Name" value="new value" /></td>
-          </tr>
-          <tr>
-            <td>Prerequisite</td>
-            <td><input id="node-prerequisite"  placeholder="Enter Nodes" value="new value" /></td>
-          </tr>
-          <tr>
-            <td>Task Time</td>
-            <td><input id="node-title"  placeholder="Enter Time" value="new value" /></td>
-          </tr>
-        </table>
-        <input type="button" value="save" id="saveButton" />
-        <input type="button" value="cancel" id="cancelButton" />
+  <header>
+    <h1>Graphic Graph</h1>
+  </header>
+    <main>
+      <div id="mynetwork"></div>
+    </main>
+
+    <div id="network-popUp" class="popup">
+      <span id="operation">node</span> <br />
+      <form>
+        <fieldset>
+          <legend>Node Information</legend>
+          <label for="node-id">Id:</label>
+          <input type="text" id="node-id" placeholder="Enter ID" value="" />
+
+          <label for="node-label">Name:</label>
+          <input type="text" id="node-label" placeholder="Enter Name" value="" />
+
+          <label for="node-prerequisite">Prerequisite:</label>
+          <input type="text" id="node-prerequisite" placeholder="Enter Nodes" value="" />
+
+          <label for="node-title">Task Time:</label>
+          <input type="text" id="node-title" placeholder="Enter Time" value="" />
+        </fieldset>
+      <div class="button-container">
+          <input type="button" class="button" value="Save" id="saveButton" />
+          <input type="button" class="button" value="Cancel" id="cancelButton" />
       </div>
+  </form>
+</div>
+
+<!-- Edge Pop-up 
+<div id="edge-popUp" class="popup" style="display: none;">
+  <form>
+      <fieldset>
+          <legend>Edge Information</legend>
+          <label for="edge-label">Cost:</label>
+          <input type="text" id="edge-label" placeholder="Enter Cost" value="" />
+      </fieldset>
+
+      <div class="button-container">
+          <p>Choose edge type:</p>
+          <button class="button" id="bidirectional">Bidirectional</button>
+          <button class="button" id="unidirectional">Unidirectional</button>
+          <br/>
+          <button class="button" id="edgeCancel">Cancel</button>
+      </div>
+  </form>
+</div>
+
 
       <div id="edge-popUp" style="display: none;">
         <table style="margin: auto">
@@ -45,10 +71,10 @@
           </tr>
         </table>
         <p>Choose edge type:</p>
-        <button id="bidirectional">Bidirectional</button>
-        <button id="unidirectional">Unidirectional</button>
+        <button class="button" id="bidirectional">Bidirectional</button>
+        <button class="button" id="unidirectional">Unidirectional</button>
         <br/>
-        <button id="edgeCancel">Cancel</button>
+        <button class="button" id="edgeCancel">Cancel</button>
       </div>
       
 </body>

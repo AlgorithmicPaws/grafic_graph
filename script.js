@@ -22,6 +22,7 @@ function draw() {
   var options = {
     interaction: { keyboard: true },
     manipulation: {
+      color: "#FE7BE5",
       addNode: function (data, callback) {
         document.getElementById("operation").innerText = "Add Node";
         document.getElementById("node-id").value = data.id;
@@ -77,7 +78,6 @@ function draw() {
       font: { 
         size: 18,
         color: "#ffffff",
-        labelHighlightBold: false,
         strokeWidth: "2px",
       },
       
