@@ -17,6 +17,10 @@
   </header>
   
     <main>
+      <section>
+        <button id="exportButton" class="button">Export to JSON</button>
+
+      </section>
       <div id="mynetwork"></div>
     </main>
 
@@ -25,24 +29,32 @@
       <form>
         <fieldset>
           <legend>Node Information</legend>
-          <label for="node-id">Id:</label>
-          <input type="text" id="node-id" placeholder="Enter ID" value="" />
+          <div class="form-group">
+            <label for="node-id">Id:</label>
+            <input type="text" id="node-id" placeholder="Enter ID" value="" />
+          </div>
 
-          <label for="node-label">Name:</label>
-          <input type="text" id="node-label" placeholder="Enter Name" value="" />
+          <div class="form-group">
+            <label for="node-label">Name:</label>
+            <input type="text" id="node-label" placeholder="Enter Name" value="" />
+          </div>
 
-          <label for="node-prerequisite">Prerequisite:</label>
-          <input type="text" id="node-prerequisite" placeholder="Enter Nodes" value="" />
+          <div class="form-group">
+            <label for="node-prerequisite">Prerequisite:</label>
+            <input type="text" id="node-prerequisite" placeholder="Enter Nodes" value="" />
+          </div>
 
-          <label for="node-title">Task Time:</label>
-          <input type="text" id="node-title" placeholder="Enter Time" value="" />
+          <div class="form-group">
+            <label for="node-title">Task Time:</label>
+            <input type="text" id="node-title" placeholder="Enter Time" value="" />
+          </div>
         </fieldset>
       </form>
       <div class="button-container">
         <button class="button" id="saveButton">Save</button>
         <button class="button" id="cancelButton">Cancel</button>
       </div>
-    </div>
+    </div>  
 
     <div id="edge-popUp" class="popup">
       <span id="edge-operation">node</span> <br />
