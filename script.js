@@ -136,9 +136,6 @@ function saveEdgeDataUni(data, callback) {
 
 function init() {
   draw();
-  document.getElementById("exportButton").addEventListener("click", function () {
-    exportToJsonFile(data); // Call a function to export your data
-});
 }
 
 function destroy() {
@@ -146,28 +143,4 @@ function destroy() {
     network.destroy();
     network = null;
   }
-}
-function exportToJsonFile(data) {
-  // Convert your data to JSON
-  const jsonData = JSON.stringify(data, null, 2); // null and 2 for pretty formatting
-
-  // Create a Blob object containing the JSON data
-  const blob = new Blob([jsonData], { type: "application/json" });
-
-  // Create a temporary URL for the Blob
-  const url = URL.createObjectURL(blob);
-
-  // Create a download link
-  const a = document.createElement("a");
-  a.style.display = "none";
-  a.href = url;
-  a.download = "data.json"; // Set the filename for the downloaded file
-
-  // Trigger a click event on the download link
-  document.body.appendChild(a);
-  a.click();
-
-  // Clean up
-  window.URL.revokeObjectURL(url);
-  document.body.removeChild(a);
 }
