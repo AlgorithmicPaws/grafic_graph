@@ -5,14 +5,6 @@ var data = {
     nodes: nodes,
     edges: edges,
   }
-
-function destroy() {
-  if (network !== null) {
-    network.destroy();
-    network = null;
-  }
-}
-
 function draw() {
   destroy();
   nodes = [];
